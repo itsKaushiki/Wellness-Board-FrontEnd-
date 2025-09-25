@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
     <nav className="navigation">
       <div className="nav-content">
         <div className="nav-brand" onClick={handleHomeClick}>
-          <span className="nav-logo">🧘‍♀️</span>
+          <span className="nav-logo"></span>
           <span className="nav-title">Wellness Board</span>
         </div>
         

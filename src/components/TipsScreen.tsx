@@ -8,6 +8,17 @@ const TipsScreen: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Remove inline emojis from AI text while keeping layout and spacing
+  const stripEmojis = useCallback((text: string) => {
+    if (!text) return text;
+    // Remove surrogate pair emojis and related variation selectors/ZWJ
+    return text
+      .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '')
+      .replace(/[\uFE0F\u200D]/g, '')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }, []);
+
   useEffect(() => {
     setCurrentScreen('home');
   }, [setCurrentScreen]);
@@ -97,9 +108,9 @@ const TipsScreen: React.FC = () => {
           >
             <div className="tip-header">
               <div className="tip-icon">{tip.icon}</div>
-              <div className="tip-title">{tip.title}</div>
+              <div className="tip-title">{stripEmojis(tip.title)}</div>
             </div>
-            <div className="tip-description">{tip.description}</div>
+            <div className="tip-description">{stripEmojis(tip.description)}</div>
           </div>
         ))}
       </div>
