@@ -1,46 +1,8 @@
-Perfect 👍 If you want the **pictures to actually show inside your README on GitHub**, you just need to:
 
-1. Create a folder in your repo called **`screenshots/`**.
-2. Put your images inside that folder.
-3. Reference them in your README with **relative paths** like this:
-
-```markdown
-![Profile Setup](./screenshots/profile.png)
-![Wellness Board](./screenshots/board.png)
-![Saved Tips](./screenshots/saved-tips.png)
-![Detailed Tip](./screenshots/detail.png)
-![Dark Theme](./screenshots/dark-theme.png)
-```
-
----
-
-Here’s your README with **pictures embedded directly in the right sections**:
-
-````markdown
 # 🌿 AI-Generated Wellness Recommendation Board  
 
 A personalized wellness application that provides AI-generated health tips based on user profiles.  
 
----
-
-### Known Issues / Improvements  
-
-#### Current Limitations  
-- Requires Gemini API key (free tier has usage limits)  
-- Network dependency for AI features  
-- Basic error handling for API failures  
-
-#### Future Enhancements  
-- Multi-language support for global users  
-- User accounts and cloud synchronization  
-- Progress tracking and habit formation  
-- Integration with fitness wearables  
-- Social sharing features  
-- Push notifications for reminders  
-- Offline caching for previously generated tips  
-- Advanced personalization with user feedback  
-
----
 
 ## 1. Project Setup & Demo  
 
@@ -141,7 +103,7 @@ private createTipsPrompt(profile: UserProfile): string {
 ---
 
 5. User Flow (with Screenshots)
-<table> <tr> <td align="center"><b>Profile Setup</b><br><img src="./screenshots/profile.png" width="400"></td> <td align="center"><b>Wellness Board</b><br><img src="./screenshots/board.png" width="400"></td> </tr> <tr> <td align="center"><b>Saved Tips</b><br><img src="./screenshots/saved-tips.png" width="400"></td> <td align="center"><b>Detailed Tip</b><br><img src="./screenshots/detail.png" width="400"></td> </tr> </table>
+<table> <tr> <td align="center"><b>Profile Setup</b><br><img src="./screenshots/profile.png" width="400"></td> <td align="center"><b>Wellness Board</b><br><img src="./screenshots/board.png" width="400"></td> </tr> <tr> <td align="center"><b>Saved Tips</b><br><img src="./screenshots/saved-tips.png" width="400"></td> <td align="center"><b>Detailed Tip</b><br><img src="./screenshots/details.png" width="400"></td> </tr> </table>
 ---
 
 ## 6. Key Features Implemented
@@ -182,22 +144,22 @@ private createTipsPrompt(profile: UserProfile): string {
 
 ---
 
-## 8. Known Issues / Improvements
+### Known Issues / Improvements  
 
-#### Current Limitations
+#### Current Limitations  
+- Requires Gemini API key (free tier has usage limits)  
+- Network dependency for AI features  
+- Basic error handling for API failures  
 
-* Mock AI service (needs real AI API integration)
-* Limited tip database (would expand with real AI)
-* Basic error handling
-
-#### Future Enhancements
-
-* Integration with real AI services (OpenAI, Google AI)
-* User accounts and cloud synchronization
-* Progress tracking and habit formation
-* Social sharing features
-* Push notifications for reminders
-* Offline support with service workers
+#### Future Enhancements  
+- Multi-language support for global users  
+- User accounts and cloud synchronization  
+- Progress tracking and habit formation  
+- Integration with fitness wearables  
+- Social sharing features  
+- Push notifications for reminders  
+- Offline caching for previously generated tips  
+- Advanced personalization with user feedback  
 
 ---
 
@@ -229,6 +191,6 @@ private createTipsPrompt(profile: UserProfile): string {
 
 ---
 
-✅ The application provides a complete wellness recommendation experience with personalized, AI-generated tips tailored to individual user profiles and goals.
+ The application provides a complete wellness recommendation experience with personalized, AI-generated tips tailored to individual user profiles and goals.
 
 ```
