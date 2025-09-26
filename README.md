@@ -1,33 +1,59 @@
-# AI-Generated Wellness Recommendation Board
+Perfect 👍 If you want the **pictures to actually show inside your README on GitHub**, you just need to:
 
-A personalized wellness application that provides AI-generated health tips based on### Known Issues / Improvements
+1. Create a folder in your repo called **`screenshots/`**.
+2. Put your images inside that folder.
+3. Reference them in your README with **relative paths** like this:
 
-### Current Limitations
-- Requires Gemini API key (free tier has usage limits)
-- Network dependency for AI features
-- Basic error handling for API failures
+```markdown
+![Profile Setup](./screenshots/profile.png)
+![Wellness Board](./screenshots/board.png)
+![Saved Tips](./screenshots/saved-tips.png)
+![Detailed Tip](./screenshots/detail.png)
+![Dark Theme](./screenshots/dark-theme.png)
+```
 
-### Future Enhancements
-- Multi-language support for global users
-- User accounts and cloud synchronization
-- Progress tracking and habit formation
-- Integration with fitness wearables
-- Social sharing features
-- Push notifications for reminders
-- Offline caching for previously generated tips
-- Advanced personalization with user feedback.
+---
 
-## 1. Project Setup & Demo
+Here’s your README with **pictures embedded directly in the right sections**:
 
-### Prerequisites
-1. Get a Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Copy `.env.example` to `.env` and add your API key:
+````markdown
+# 🌿 AI-Generated Wellness Recommendation Board  
+
+A personalized wellness application that provides AI-generated health tips based on user profiles.  
+
+---
+
+### Known Issues / Improvements  
+
+#### Current Limitations  
+- Requires Gemini API key (free tier has usage limits)  
+- Network dependency for AI features  
+- Basic error handling for API failures  
+
+#### Future Enhancements  
+- Multi-language support for global users  
+- User accounts and cloud synchronization  
+- Progress tracking and habit formation  
+- Integration with fitness wearables  
+- Social sharing features  
+- Push notifications for reminders  
+- Offline caching for previously generated tips  
+- Advanced personalization with user feedback  
+
+---
+
+## 1. Project Setup & Demo  
+
+### Prerequisites  
+1. Get a Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)  
+2. Copy `.env.example` to `.env` and add your API key:  
 ```bash
 cp .env.example .env
 # Edit .env and add your REACT_APP_GEMINI_API_KEY
-```
+````
 
 ### Web Setup
+
 ```bash
 npm install && npm start
 ```
@@ -35,31 +61,40 @@ npm install && npm start
 The application will launch at `http://localhost:3000`
 
 ### Demo
+
 The app provides a complete wellness recommendation experience with personalized AI-generated tips powered by Google's Gemini API.
+
+---
 
 ## 2. Problem Understanding
 
 **Goal**: Create a multi-screen wellness app that captures user profiles and generates personalized health recommendations.
 
 **Key Requirements**:
-- Profile capture (age, gender, goal selection)
-- AI generates 5 personalized tips displayed as scrollable cards
-- Detailed view with step-by-step advice when tapping cards
-- Save favorite tips with local persistence
+
+* Profile capture (age, gender, goal selection)
+* AI generates 5 personalized tips displayed as scrollable cards
+* Detailed view with step-by-step advice when tapping cards
+* Save favorite tips with local persistence
 
 **Assumptions**:
-- Google Gemini API for real AI-generated content
-- Fallback to mock data if API is unavailable
-- Local storage for persistence
-- Mobile-first responsive design
+
+* Google Gemini API for real AI-generated content
+* Fallback to mock data if API is unavailable
+* Local storage for persistence
+* Mobile-first responsive design
+
+---
 
 ## 3. AI Prompts & Iterations
 
 ### Gemini API Integration
+
 **Initial Challenge**: Creating contextual, personalized wellness tips
 **Solution**: Structured prompts with user profile integration
 
-### Prompt Engineering Strategy
+**Prompt Engineering Strategy**
+
 ```typescript
 private createTipsPrompt(profile: UserProfile): string {
   const goalsText = profile.goals.join(', ');
@@ -70,106 +105,119 @@ private createTipsPrompt(profile: UserProfile): string {
 }
 ```
 
-### Refined Prompts
-- **Primary Prompt**: Generates 5 personalized tips based on age, gender, and goals
-- **Detail Prompt**: Expands selected tips with comprehensive explanations
-- **Fallback System**: Mock data when API is unavailable
-- **JSON Parsing**: Structured responses for consistent UI rendering
+**Refined Prompts**
 
-### AI Features Implemented
-- Real-time tip generation via Gemini API
-- Profile-based personalization
-- Dynamic detailed explanations
-- Error handling with graceful fallbacks
+* **Primary Prompt**: Generates 5 personalized tips based on age, gender, and goals
+* **Detail Prompt**: Expands selected tips with comprehensive explanations
+* **Fallback System**: Mock data when API is unavailable
+* **JSON Parsing**: Structured responses for consistent UI rendering
+
+**AI Features Implemented**
+
+* Real-time tip generation via Gemini API
+* Profile-based personalization
+* Dynamic detailed explanations
+* Error handling with graceful fallbacks
+
+---
 
 ## 4. Architecture & Code Structure
 
 ### Core Components
-- `App.tsx` - Main application with navigation logic
-- `AppContext.tsx` - React Context for state management
-- `ProfileScreen.tsx` - User profile capture
-- `TipsScreen.tsx` - Display generated wellness tips
-- `TipDetailScreen.tsx` - Detailed tip view with save functionality
-- `aiService.ts` - Mock AI service for tip generation
+
+* `App.tsx` - Main application with navigation logic
+* `AppContext.tsx` - React Context for state management
+* `ProfileScreen.tsx` - User profile capture
+* `TipsScreen.tsx` - Display generated wellness tips
+* `TipDetailScreen.tsx` - Detailed tip view with save functionality
+* `aiService.ts` - Mock AI service for tip generation
 
 ### State Management
-- React Context handles global state
-- Local storage persistence for saved tips
-- Profile-based tip generation and filtering
 
-### Key Features
-- **Profile Customization**: Age, gender, and multiple goal selection
-- **AI Integration**: Simulated AI service with realistic delays
-- **Personalization**: Tips filtered based on user goals
-- **Persistence**: Saved tips stored in localStorage
-- **Regeneration**: Fresh tips on demand
+* React Context handles global state
+* Local storage persistence for saved tips
+* Profile-based tip generation and filtering
 
-## 5. User Flow
+---
 
-1. **Profile Setup**: Users enter age, gender, and select health goals
-2. **AI Generation**: System generates 5 personalized tips with loading states
-3. **Tip Exploration**: Users browse tips in card format
-4. **Detailed View**: Tap cards for detailed explanations and step-by-step guides
-5. **Favorites**: Save preferred tips for future reference
+5. User Flow (with Screenshots)
+<table> <tr> <td align="center"><b>Profile Setup</b><br><img src="./screenshots/profile.png" width="400"></td> <td align="center"><b>Wellness Board</b><br><img src="./screenshots/board.png" width="400"></td> </tr> <tr> <td align="center"><b>Saved Tips</b><br><img src="./screenshots/saved-tips.png" width="400"></td> <td align="center"><b>Detailed Tip</b><br><img src="./screenshots/detail.png" width="400"></td> </tr> </table>
+---
 
 ## 6. Key Features Implemented
 
 ### Profile Capture
-- Age validation (13-120)
-- Gender selection with inclusive options
-- Multi-select health goals with visual feedback
+
+* Age validation (13-120)
+* Gender selection with inclusive options
+* Multi-select health goals with visual feedback
 
 ### AI Tip Generation
-- Profile-based filtering
-- Loading states with spinner
-- Regenerate functionality for fresh recommendations
+
+* Profile-based filtering
+* Loading states with spinner
+* Regenerate functionality for fresh recommendations
 
 ### Tip Display
-- Card-based interface with icons
-- Smooth animations and hover effects
-- Visual indicators for saved tips
+
+* Card-based interface with icons
+* Smooth animations and hover effects
+* Visual indicators for saved tips
 
 ### Detailed Tips
-- Comprehensive explanations
-- Step-by-step actionable advice
-- Save/unsave functionality
+
+* Comprehensive explanations
+* Step-by-step actionable advice
+* Save/unsave functionality
+
+---
 
 ## 7. Technology Stack
 
-- **Frontend**: React 18 with TypeScript
-- **Styling**: CSS3 with modern features (Grid, Flexbox, Animations)
-- **Icons**: Lucide React for consistent iconography
-- **State**: React Context API
-- **Storage**: Browser localStorage
+* **Frontend**: React 18 with TypeScript
+* **Styling**: CSS3 with modern features (Grid, Flexbox, Animations)
+* **Icons**: Lucide React for consistent iconography
+* **State**: React Context API
+* **Storage**: Browser localStorage
+
+---
 
 ## 8. Known Issues / Improvements
 
-### Current Limitations
-- Mock AI service (needs real AI API integration)
-- Limited tip database (would expand with real AI)
-- Basic error handling
+#### Current Limitations
 
-### Future Enhancements
-- Integration with real AI services (OpenAI, Google AI)
-- User accounts and cloud synchronization
-- Progress tracking and habit formation
-- Social sharing features
-- Push notifications for reminders
-- Offline support with service workers
+* Mock AI service (needs real AI API integration)
+* Limited tip database (would expand with real AI)
+* Basic error handling
+
+#### Future Enhancements
+
+* Integration with real AI services (OpenAI, Google AI)
+* User accounts and cloud synchronization
+* Progress tracking and habit formation
+* Social sharing features
+* Push notifications for reminders
+* Offline support with service workers
+
+---
 
 ## 9. Bonus Features Added
 
 ### User Experience
-- **Smooth Animations**: CSS transitions for all interactions
-- **Loading States**: Realistic AI generation simulation
-- **Visual Feedback**: Hover effects and selection states
-- **Responsive Design**: Mobile-first approach
+
+* **Smooth Animations**: CSS transitions for all interactions
+* **Loading States**: Realistic AI generation simulation
+* **Visual Feedback**: Hover effects and selection states
+* **Responsive Design**: Mobile-first approach
 
 ### Technical Enhancements
-- **TypeScript**: Full type safety throughout
-- **Local Persistence**: Automatic save/restore of favorites
-- **Error Boundaries**: Graceful error handling
-- **Performance**: Optimized re-renders with React best practices
+
+* **TypeScript**: Full type safety throughout
+* **Local Persistence**: Automatic save/restore of favorites
+* **Error Boundaries**: Graceful error handling
+* **Performance**: Optimized re-renders with React best practices
+
+---
 
 ## Running the Application
 
@@ -179,4 +227,8 @@ private createTipsPrompt(profile: UserProfile): string {
 4. Run `npm start` to launch the development server
 5. Open `http://localhost:3000` in your browser
 
-The application provides a complete wellness recommendation experience with personalized, AI-generated tips tailored to individual user profiles and goals.
+---
+
+✅ The application provides a complete wellness recommendation experience with personalized, AI-generated tips tailored to individual user profiles and goals.
+
+```
